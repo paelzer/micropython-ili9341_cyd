@@ -183,6 +183,7 @@ class Display(object):
         self.clear()
         self.display_off()
         self.spi.deinit()
+        self.backlight_off()
         print('display off')
 
     def clear(self, color=0, hlines=8):
@@ -1055,3 +1056,4 @@ class Display(object):
         self.spi.write(data)
         self.spi.unlock()
         self.cs.value = True
+
